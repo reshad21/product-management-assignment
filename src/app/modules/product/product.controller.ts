@@ -11,8 +11,11 @@ const createProductController = async (req: Request, res: Response) => {
             data: result,
         })
     } catch (error) {
-        console.log(error);
-
+        res.status(500).json({
+            success: true,
+            message: "Something went wrong",
+            error: error
+        })
     }
 }
 
@@ -25,8 +28,11 @@ const getAllProductController = async (req: Request, res: Response) => {
             data: product,
         })
     } catch (error) {
-        console.log(error);
-
+        res.status(500).json({
+            success: true,
+            message: "Something went wrong",
+            error: error
+        })
     }
 }
 
@@ -40,8 +46,11 @@ const getSingleProductController = async (req: Request, res: Response) => {
             data: product,
         })
     } catch (error) {
-        console.log(error);
-
+        res.status(500).json({
+            success: true,
+            message: "Something went wrong",
+            error: error
+        })
     }
 }
 
