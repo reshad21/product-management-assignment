@@ -4,10 +4,8 @@ import { OrderServices } from "./order.service";
 const createProduct = async (req: Request, res: Response) => {
     try {
         const order = req.body;
-
         // data validation using zod
         // const zodparseData = productValidationSchema.parse(product)
-
         const result = await OrderServices.createOrderIntoDB(order);
 
         res.status(200).json({
