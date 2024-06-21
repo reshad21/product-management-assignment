@@ -7,6 +7,12 @@ const createOrderIntoDB = async (payload: TOrderDocument) => {
     return result;
 }
 
+const getAllOrderIntoDB = async () => {
+    const result = await OrderModel.find();
+    return result;
+}
+
 export const OrderServices = {
-    createOrderIntoDB
+    createOrderIntoDB,
+    getAllOrderIntoDB
 }
