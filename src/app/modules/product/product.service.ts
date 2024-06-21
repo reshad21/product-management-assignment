@@ -52,6 +52,7 @@ interface SearchQuery {
 
 const searchProductsInDB = async (query: SearchQuery) => {
     try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const dbQuery: any = {};
 
         if (query.name) {
