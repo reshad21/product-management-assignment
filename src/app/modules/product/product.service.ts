@@ -54,7 +54,6 @@ const searchProductsInDB = async (query: SearchQuery) => {
     try {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const dbQuery: any = {};
-
         if (query.name) {
             dbQuery.name = { $regex: query.name, $options: 'i' }; // Case-insensitive text search
         }
@@ -70,7 +69,7 @@ const searchProductsInDB = async (query: SearchQuery) => {
         }
 
         if (query.tags && query.tags.length > 0) {
-            dbQuery.tags = { $all: query.tags }; // Matches products that have all the specified tags
+            dbQuery.tags = { $all: query.tags };
         }
 
         const results = await ProductModel.find(dbQuery);

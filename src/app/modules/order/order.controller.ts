@@ -39,8 +39,28 @@ const getAllOrder = async (req: Request, res: Response) => {
     }
 }
 
+const searchOrderProducts = async (req: Request, res: Response) => {
+    try {
+        const query = req.query; // Get query parameters from the request
+        const searchResults = await OrderServices.searchOrderProductsInDB(query);
+
+        res.status(200).json({
+            success: true,
+            message: "Order search successfully",
+            data: searchResults,
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Something went wrong",
+            error: error
+        });
+    }
+}
+
 
 export const OrderControllers = {
     createProduct,
-    getAllOrder
+    getAllOrder,
+    searchOrderProducts
 }

@@ -12,7 +12,34 @@ const getAllOrderIntoDB = async () => {
     return result;
 }
 
+
+interface SearchQuery {
+    email?: string;
+}
+
+const searchOrderProductsInDB = async (query: SearchQuery) => {
+    try {
+        // Initialize dbQuery with proper typing
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const dbQuery: { [key: string]: any } = {};
+
+        if (query.email) {
+            dbQuery.email = { $regex: query.email, $options: 'i' }; // Case-insensitive text search
+        }
+
+        const results = await OrderModel.find(dbQuery);
+
+        return results;
+    } catch (error) {
+        console.error(`Error searching products with query ${JSON.stringify(query)}:`, error);
+        throw error;
+    }
+}
+
+
+
 export const OrderServices = {
     createOrderIntoDB,
-    getAllOrderIntoDB
+    getAllOrderIntoDB,
+    searchOrderProductsInDB
 }
