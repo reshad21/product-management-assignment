@@ -44,8 +44,8 @@ const getAllProduct = async (req: Request, res: Response) => {
 
 const getSingleProduct = async (req: Request, res: Response) => {
     try {
-        const { id } = req.params;
-        const product = await ProductServices.getSingleProductIntoDB(id);
+        const { productId } = req.params;
+        const product = await ProductServices.getSingleProductIntoDB(productId);
         res.status(200).json({
             success: true,
             message: "Product is retrive successfully",
@@ -62,8 +62,8 @@ const getSingleProduct = async (req: Request, res: Response) => {
 
 const deleteProduct = async (req: Request, res: Response) => {
     try {
-        const { id } = req.params;
-        const product = await ProductServices.getSingleProductIntoDB(id);
+        const { productId } = req.params;
+        const product = await ProductServices.getSingleProductIntoDB(productId);
         res.status(200).json({
             success: true,
             message: "Product is deleted successfully",
@@ -79,10 +79,10 @@ const deleteProduct = async (req: Request, res: Response) => {
 }
 const updateProduct = async (req: Request, res: Response) => {
     try {
-        const { id } = req.params;
+        const { productId } = req.params;
         const { product } = req.body;
 
-        const result = await ProductServices.updateProductInDB(id, product);
+        const result = await ProductServices.updateProductInDB(productId, product);
         res.status(200).json({
             success: true,
             message: "Product is update successfully",
