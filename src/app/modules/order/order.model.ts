@@ -6,7 +6,7 @@ const orderSchema = new Schema<TOrderDocument>({
         type: String,
         required: true
     },
-    productId: {
+    product: {
         type: Schema.Types.ObjectId,
         ref: 'Product',
         required: true
