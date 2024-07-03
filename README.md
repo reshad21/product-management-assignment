@@ -1,13 +1,9 @@
 # Project Name: ProductManagement
 
-## Description
-
-A brief description of your project, highlighting its main features and purpose.
-
 ## Table of Contents
 
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
+- [https://github.com/reshad21/product-management-assignment](#installation)
+- [https://productmanagement-iota.vercel.app/](#running-the-application)
 
 ## Installation
 
