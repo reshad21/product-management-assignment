@@ -14,7 +14,7 @@ A brief description of your project, highlighting its main features and purpose.
 1. **Clone the Repository:**
 
    ```sh
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/reshad21/product-management-assignment
    cd your-repo-name
    open cmd and then run npm install
 
